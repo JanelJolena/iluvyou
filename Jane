@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valentine's Card</title>
+  <style>
+    body {
+      background-color: #fff0f5;
+      font-family: 'Segoe UI', sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .card {
+      background-color: #fff;
+      border: 3px solid #ff69b4;
+      border-radius: 15px;
+      padding: 30px;
+      width: 400px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+      position: relative;
+    }
+
+    .heart {
+      color: red;
+      font-size: 40px;
+      margin-bottom: 10px;
+      animation: pulse 1.2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    h1 {
+      color: #ff1493;
+    }
+
+    #message {
+      font-size: 18px;
+      color: #333;
+      margin: 20px 0;
+      min-height: 80px;
+    }
+
+    .signature {
+      margin-top: 30px;
+      font-style: italic;
+      color: #777;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #ff69b4;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #ff1493;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="heart">❤️</div>
+    <h1>Hành Trình Làm B Vui!!</h1>
+    <div id="message">Bấm mấy cái nút bên dưới đê!!</div>
+    <div class="btn-container">
+      <button onclick="showMessage(0)">Memory 1</button>
+      <button onclick="showMessage(1)">Memory 2</button>
+      <button onclick="showMessage(2)">Memory 3</button>
+    </div>
+    <div class="signature">— Híu deptry 💖</div>
+  </div>
+
+  <!-- 🎵 Background music -->
+  <audio id="player" autoplay loop>
+     <source src="love-song.mp3" type="audio/mp3">
+</audio>
+
+  <script>
+    const messages = [
+      "B owii, học mệt lắm đúng hong? mỗi lần mệt mỏi hãy nhắn cho tui 1 tin, tui hứa sẽ cố gắng mọi cách làm cho b cười một cách vui vẻ",
+      "B bít hông, lần cuối tui khóc vì hành phúc là lâu ơi là lâu rồi nhưng những lời nói của bạn vào cái đêm đấy làm tui vui lên tht tht là nhiều luônnnn",
+      "Tin nhắn cuối cùng r huhu, b owiii nhớ giữ gìn sức khỏe nheseeee bởi vì có người thực sự quan tâm đến bạn đóooooo"
+    ];
+
+    function showMessage(index) {
+      document.getElementById('message').textContent = messages[index];
+    }
+  </script>
+</body>
+</html>
